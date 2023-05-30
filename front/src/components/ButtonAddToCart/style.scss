@@ -1,0 +1,16 @@
+.card-buy__btn{
+    cursor: pointer;
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 11px 24px;
+gap: 10px;
+color: #EDEDED;
+width: 269px;
+height: 50px;
+
+border: 1px solid rgba(237, 237, 237, 0.5);
+border-radius: 100px;
+background-color: transparent;
+}

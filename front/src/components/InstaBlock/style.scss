@@ -1,0 +1,54 @@
+.content-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 48px;
+  margin-bottom: 124px;
+  .item {
+    width: 366px;
+    height: 366px;
+    background-size: 100%;
+    transition: all 0.8s;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    -o-transition: all 0.8s;
+  }
+  .item-first {
+    background-image: url("./img/Rectangle8.png");
+  }
+  .item-second {
+    background-image: url("./img/Rectangle10.png");
+  }
+  .item-third {
+    background-image: url("./img/Rectangle9.png");
+  }
+  .item-four {
+    background-image: url("./img/Rectangle8.png");
+  }
+  .item-five {
+    background-image: url("./img/Rectangle10.png");
+  }
+  .item-six {
+    background-image: url("./img/Rectangle9.png");
+  }
+  .item:hover {
+    background-size: calc(100% + 25px) auto;
+  }
+}
+.content-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #ededed;
+  a {
+    text-decoration: none;
+    color: #ededed;
+  }
+}

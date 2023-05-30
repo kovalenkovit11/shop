@@ -1,0 +1,54 @@
+.container{
+    padding: 0;
+}
+.card-items{
+    .card{
+        margin-bottom: 64px;
+        background-color: transparent;
+        .card-img{
+            position: relative;
+            padding: 138px 13px 26px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 269px;
+            height: 365px;
+            background-color: #111111;
+            
+            svg{
+                position: absolute;
+                top: 22px;
+                right: 22px;
+                cursor: pointer;
+                
+            }
+            img{
+                cursor: pointer;
+                transition: .5s;
+            }
+            
+        }
+        .card-img:hover img{
+            transform: scale(1.05);
+            -webkit-transform: scale(1.05);
+            -moz-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            -o-transform: scale(1.05);
+}
+
+        .card-title{
+            font-size: 20px;
+            margin-top: 16px;
+            margin-bottom: 4px;
+            line-height: 32px;
+        }
+        .card-coast{
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+    }
+
+}

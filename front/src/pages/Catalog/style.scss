@@ -1,0 +1,27 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  font-family: "Gilroy";
+  min-height: 100%;
+  text-align: start;
+  .catalog-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    margin-top: 42px;
+
+    color: #ededed;
+  }
+
+  .dropDowns {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+
+  }
+  
+}
+
+

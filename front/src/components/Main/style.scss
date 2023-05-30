@@ -1,0 +1,182 @@
+.wrapper {
+  height: 40vw;
+  max-width: 100%;
+  margin: 0 auto;
+  background-image: url("./img/main.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  .main-text {
+    font-family: "Gilroy";
+    margin: 80px 0 42px 0;
+    font-weight: 400;
+    // height: 198px;
+    font-size: 54px;
+    // line-height: 66px;
+    color: #ededed;
+    text-align: start;
+    max-width: 555px;
+  }
+  .main-btn {
+    cursor: pointer; ;
+    font-family: "Gilroy";
+    width: 241px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    height: 50px;
+    left: 392px;
+    top: 320px;
+    border: 1px solid #ededed;
+    border-radius: 100px;
+    background-color: transparent;
+    color: #ededed;
+    img {
+      margin-left: 12px;
+    }
+  }
+}
+
+.main-grid_items {
+  margin: 16px auto 124px;
+  gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1400px;
+
+  .grid-item {
+    position: relative;
+    box-sizing: border-box;
+    max-width: 100%;
+    height: 23rem;
+    transition: ease-in-out 0.5s;
+    -webkit-transition: ease-in-out 0.5s;
+    -moz-transition: ease-in-out 0.5s;
+    -ms-transition: ease-in-out 0.5s;
+    -o-transition: ease-in-out 0.5s;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  .grid-item:hover {
+    background-size: calc(100% + 25px) auto;
+  }
+  .first {
+    background-image: url("./img/caps.png");
+  }
+  .second {
+    background-image: url("./img/coffeeMachine.png");
+  }
+  .third {
+    background-image: url("./img/capuch.png");
+  }
+  .four {
+    background-image: url("./img/accesorise.png");
+  }
+  .grid-item__text {
+    margin-top: 44px;
+    margin-left: 44px;
+    position: absolute;
+    top: 0;
+    text-align: start;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44px;
+    z-index: 1000;
+
+    color: #ededed;
+  }
+}
+@media (max-width: 1260px) {
+  .main-grid_items {
+    .grid-item {
+      height: 20rem;
+    }
+  }
+}
+@media (max-width: 968px) {
+  .main {
+    .main-text {
+      font-size: 40px;
+      max-width: 400px;
+    }
+  }
+  .main-grid_items {
+    .grid-item {
+      height: 16rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    .main-text {
+      font-size: 30px;
+      max-width: 300px;
+    }
+  }
+  .main-grid_items {
+    .grid-item {
+      height: 12rem;
+    }
+    .grid-item__text {
+      font-size: 24px;
+    }
+  }
+}
+@media (max-width: 620px) {
+  .main {
+    .main-text {
+      font-size: 24px;
+      max-width: 250px;
+    }
+    .main-btn {
+      width: 180px;
+      height: 36px;
+      font-size: 14px;
+      img {
+        margin-left: 6px;
+        width: 12px;
+        height: 9px;
+      }
+    }
+  }
+  .main-grid_items {
+    grid-template-columns: 1fr;
+    .grid-item__text {
+      font-size: 24px;
+    }
+    .grid-item {
+      height: 50vw;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    .main-text {
+      font-size: 10px;
+      max-width: 100px;
+    }
+    .main-btn {
+      width: 120px;
+      height: 30px;
+      font-size: 9px;
+      img {
+        margin-left: 6px;
+        width: 12px;
+        height: 9px;
+      }
+    }
+  }
+  .main-grid_items {
+    grid-template-columns: 1fr;
+    .grid-item {
+      height: 50vw;
+    }
+    .grid-item__text {
+      font-size: 14px;
+    }
+  }
+}
