@@ -1,11 +1,13 @@
 .container {
   height: 100%;
   display: flex;
+
   flex-direction: column;
   flex-grow: 2;
   font-family: "Gilroy";
   min-height: 100%;
   text-align: start;
+  
   .catalog-title {
     font-style: normal;
     font-weight: 400;
@@ -16,12 +18,21 @@
   }
 
   .dropDowns {
+    margin: 0 auto;
     display: flex;
+    align-items: start;
     flex-wrap: wrap;
     margin-bottom: 30px;
 
   }
   
+}
+@media (max-width: 1260px) {
+  .main-grid_items {
+    .grid-item {
+      height: 20rem;
+    }
+  }
 }
 
 

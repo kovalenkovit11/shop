@@ -4,16 +4,20 @@ import InstaBlock from "../InstaBlock/InstaBlock";
 import arrow from "./img/Arrow.svg";
 import { NavLink } from "react-router-dom";
 
+
+
+
 const Main = () => {
+
   return (
     <>
-      <div className="wrapper">
+   <div className="wrapper">
         <div className="container">
           <div className="main">
             <p className="main-text">
               Кава та кавомашини від надійного постачальника
             </p>
-            <NavLink to="/catalog">
+            <NavLink to="/products">
               <button className="main-btn">
                 Перейти в каталог <img src={arrow} alt="arrow" />
               </button>
@@ -36,6 +40,8 @@ const Main = () => {
         </div>
       </div>
       <InstaBlock />
+      
+     
     </>
   );
 };

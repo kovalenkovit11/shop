@@ -17,7 +17,7 @@ const Modal = ({openModal, setOpenModal}) => {
             </div>
             <div className='modal-circle'>
             <svg width="25" height="17" viewBox="0 0 25 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.59014 9.1365L7.56723 15.1703C8.34459 15.955 9.60493 15.955 10.3823 15.1703L23.744 1.68187" stroke="#1D1B1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.59014 9.1365L7.56723 15.1703C8.34459 15.955 9.60493 15.955 10.3823 15.1703L23.744 1.68187" stroke="#1D1B1A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
             </div>
             <div className='modal-text'>Товар доданий у кошик</div>

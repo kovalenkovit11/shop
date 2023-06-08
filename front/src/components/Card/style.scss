@@ -3,8 +3,13 @@
 }
 .card-items{
     .card{
+        display: flex;
+        justify-content: space-between;
         margin-bottom: 64px;
         background-color: transparent;
+        border: none;
+        max-width: 269px;
+        height: 515px;
         .card-img{
             position: relative;
             padding: 138px 13px 26px;
@@ -24,6 +29,8 @@
                 
             }
             img{
+                width: 243px;
+                height: 171px;
                 cursor: pointer;
                 transition: .5s;
             }
