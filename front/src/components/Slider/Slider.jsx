@@ -1,40 +1,53 @@
+import { useEffect } from 'react';
 import { Carousel } from 'react-carousel-minimal';
+import { useDispatch, useSelector } from 'react-redux'
+import {getProductDetails, clearErrors } from '../../actions/productActions'
 import './style.scss'
-import image1 from './header.png'
-import image2 from './Rectangle11.png'
-import image3 from './Rectangle12.png'
-import image4 from './Rectangle13.png'
-import image5 from './Rectangle14.png'
-const Slider = ()=> {
- const data = [
-    {
-      image: image1,
-    },
-    {
-      image: image2,
-    },
-    {
-      image: image3,
-
-    },
-    {
-      image: image4,
-
-    },
-    {
-        image: image5,
+// import image1 from './header.png'
+// import image2 from './Rectangle11.png'
+// import image3 from './Rectangle12.png'
+// import image4 from './Rectangle13.png'
+// import image5 from './Rectangle14.png'
+const Slider = ({match})=> {
   
-      },
- 
-  ];
+//  const data = [
+//     {
+//       image: image1,
+//     },
+//     {
+//       image: image2,
+//     },
+//     {
+//       image: image3,
 
+//     },
+//     {
+//       image: image4,
+
+//     },
+//     {
+//         image: image5,
+  
+//       },
+ 
+//   ];
+const dispatch = useDispatch()
+const { error, product} = useSelector(state => state.productDetails)
+useEffect(() =>{
+  dispatch(getProductDetails(match.params.id))
+  if(error){
+    alert(error);
+    dispatch(clearErrors())
+  }
+},[dispatch, error, match.params.id])
 
   return (
+   
     <div className="carousel">
            <div>
         <div>
-       { data.length >1 ?  <Carousel
-            data={data}
+       { product.images.length > 1 ?  <Carousel
+            data={product.images}
             time={0}
             width="850px"
             height="500px"
@@ -47,7 +60,7 @@ const Slider = ()=> {
             pauseIconSize="0px"
             slideBackgroundColor="none"
             slideImageFit="cover"
-            thumbnails={data.length > 1 ? true : false}
+            thumbnails={product.images.length > 1 ? true : false}
             thumbnailWidth="100px"
             style={{
                 display: "flex",
@@ -55,7 +68,7 @@ const Slider = ()=> {
               textAlign: "center",
               margin: "40px auto",
             }}
-          /> : data.map( (item) => <div className='carousel-img'> <img src={item.image} alt='card'/> </div>)}
+          /> : product.images.map( (image) => <div className='carousel-img'> <img src={image.url} alt={product.title}/> </div>)}
         </div>
       </div>
     </div>

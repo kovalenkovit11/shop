@@ -17,7 +17,7 @@ const Main = () => {
             <p className="main-text">
               Кава та кавомашини від надійного постачальника
             </p>
-            <NavLink to="/products">
+            <NavLink className='btn-catalog' to="/products">
               <button className="main-btn">
                 Перейти в каталог <img src={arrow} alt="arrow" />
               </button>
