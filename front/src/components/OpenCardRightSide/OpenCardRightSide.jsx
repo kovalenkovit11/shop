@@ -4,30 +4,29 @@ import ButtonAddToCart from '../ButtonAddToCart/ButtonAddToCart'
 import { useState } from 'react';
 
 
-const OpenCardRightSide = ({ openModal, setOpenModal}) => {
-    const priceTotal = 12000
+const OpenCardRightSide = ({product, openModal, setOpenModal}) => {
+    console.log(product);
     const [count, setCount] = useState(1)
+    const priceTotal = product.price * count 
     const decreaseCount = ()=>{
-        console.log(count);
-        if(count < 2){
+        if(count  <= 1){
 
-            setCount(1)
+            setCount(+1)
         }else{
-            setCount(count - 1) 
+            setCount(count -1) 
 
         }
         return count
 
     }
     const increaseCount = ()=>{
-        console.log(count);
         setCount(count + 1) 
         
     }
-    
+    console.log(count);
   return (
     <div className='right-side'>
-        <h3 className='title'>КавомашинаDeLonghi ECAM 22.110 B Magnifica S </h3>
+        <h3 className='title'>{product.name}</h3>
         <p className='coast'>{priceTotal}грн</p>
         <div className='counter'>
             <div className={count < 2 ? "disabled" : "minus"} onClick={decreaseCount}> - </div>

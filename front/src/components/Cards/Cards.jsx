@@ -1,15 +1,11 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import Card from '../Card/Card'
+
 import './style.scss'
 
-import { useDispatch, useSelector } from 'react-redux'
-import { getProducts } from '../../actions/productActions'
-const Cards = ({setOpenModal}) => {
-const dispatch = useDispatch();
-const {loading, products, error, productsCount} = useSelector(state => state.products)
-useEffect(() =>{
-  dispatch(getProducts())
-},[dispatch])
+
+const Cards = ({setOpenModal, products, loading}) => {
+
 
   return (
     <div >
@@ -19,6 +15,8 @@ useEffect(() =>{
 ))}
 </div>
     )}
+   
+    
     
 </div>
   )

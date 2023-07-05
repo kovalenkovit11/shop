@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import './style.scss'
 
 
@@ -22,8 +23,8 @@ const Modal = ({openModal, setOpenModal}) => {
             </div>
             <div className='modal-text'>Товар доданий у кошик</div>
             <div className='modal-btns'>
-                <button className='button btn-continue'>Продовжити покупки</button>
-                <button className='button btn-purchase'>Оформити замовлення</button>
+            <NavLink onClick={()=>setOpenModal(false)} style={{background: 'none'}} to={"/products"} > <button className='button btn-continue'>Продовжити покупки</button> </NavLink>
+                <NavLink onClick={()=>setOpenModal(false)} style={{background: 'none'}} to={"/product/:id/orders"} ><button className='button btn-purchase'>Оформити замовлення</button> </NavLink>
             </div>
         </div>
     </div>

@@ -1,16 +1,17 @@
 import React from "react";
 import logo from "./img/logo.svg";
-import bag from "./img/Cart.svg";
+// import bag from "./img/Cart.svg";
 
-import likes from "./img/Like.svg";
+// import likes from "./img/Like.svg";
 
-import insta from "./img/instagram.svg";
+// import insta from "./img/instagram.svg";
 
-import search from "./img/search.svg";
+// import search from "./img/search.svg";
 import text from "./img/Text.svg";
-import user from "./img/User.svg";
+// import user from "./img/User.svg";
 
 import "./style.scss";
+import Search from "./Search";
 
 const Header = () => {
   return (
@@ -25,21 +26,7 @@ const Header = () => {
             <p className="logo-title">Dark coffee capsule</p>
           </div></a>
           <div className="links">
-            <a href="/#">
-              <img src={search} alt="insta" />
-            </a>
-            <a href="/#">
-              <img src={insta} alt="insta" />
-            </a>
-            <a href="/#">
-              <img src={user} alt="insta" />
-            </a>
-            <a href="/#">
-              <img src={likes} alt="insta" />
-            </a>
-            <a href="/#">
-              <img src={bag} alt="insta" />
-            </a>
+           <Search/>
           </div>
         </div>
       </div>

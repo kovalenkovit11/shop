@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer';
 import OpenCard from './components/OpenCard/OpenCard';
 // import NotFound from './pages/NotFound/NotFound';
 import Modal from './components/Modal/Modal';
+import Delivery from './pages/orders/Delivery';
 
 
 const Routs = ()=> {
@@ -20,7 +21,9 @@ const Routs = ()=> {
       <Routes>
         <Route exact path="/" element={<Main/>} />
         <Route exact path="/products" element={<Catalog openModal={openModal} setOpenModal={setOpenModal} selected={selected} setSelected={setSelected}/>} />
+        {/* <Route path="/search/:keyword" element={<Catalog openModal={openModal} setOpenModal={setOpenModal} selected={selected} setSelected={setSelected}/>} /> */}
         <Route exact path="/product/:id" element={<OpenCard openModal={openModal} setOpenModal={setOpenModal}/>} />
+        <Route exact path="/product/:id/orders" element={<Delivery/>} />
         {/* <Route path="/catalog/:productId" component={Product} />
         <Route component={NotFound} /> */}
       </Routes>

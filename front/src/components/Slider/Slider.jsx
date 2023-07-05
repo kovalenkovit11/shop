@@ -1,45 +1,11 @@
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { Carousel } from 'react-carousel-minimal';
-import { useDispatch, useSelector } from 'react-redux'
-import {getProductDetails, clearErrors } from '../../actions/productActions'
+// import { useDispatch, useSelector } from 'react-redux'
+// import {getProductDetails, clearErrors } from '../../actions/productActions'
 import './style.scss'
-// import image1 from './header.png'
-// import image2 from './Rectangle11.png'
-// import image3 from './Rectangle12.png'
-// import image4 from './Rectangle13.png'
-// import image5 from './Rectangle14.png'
-const Slider = ({match})=> {
-  
-//  const data = [
-//     {
-//       image: image1,
-//     },
-//     {
-//       image: image2,
-//     },
-//     {
-//       image: image3,
 
-//     },
-//     {
-//       image: image4,
-
-//     },
-//     {
-//         image: image5,
-  
-//       },
+const Slider = ({product})=> {
  
-//   ];
-const dispatch = useDispatch()
-const { error, product} = useSelector(state => state.productDetails)
-useEffect(() =>{
-  dispatch(getProductDetails(match.params.id))
-  if(error){
-    alert(error);
-    dispatch(clearErrors())
-  }
-},[dispatch, error, match.params.id])
 
   return (
    
@@ -68,7 +34,7 @@ useEffect(() =>{
               textAlign: "center",
               margin: "40px auto",
             }}
-          /> : product.images.map( (image) => <div className='carousel-img'> <img src={image.url} alt={product.title}/> </div>)}
+          /> : <img style={{width: '557px', height: '486px', marginTop: '58px'}} src={product.images[0].image} alt={product.title}/> }
         </div>
       </div>
     </div>

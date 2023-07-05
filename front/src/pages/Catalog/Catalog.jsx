@@ -1,5 +1,10 @@
 import "./style.scss";
+import React, {useEffect} from 'react'
+import { useDispatch } from 'react-redux'
+import { getProducts } from '../../actions/productActions'
 import DropDown from "../../components/DropDown/DropDown";
+import Pagination from 'react-js-pagination'
+import { useSelector } from "react-redux";
 import { useState } from "react";
 import Cards from '../../components/Cards/Cards';
 import Modal from '../../components/Modal/Modal';
@@ -14,8 +19,19 @@ import {
 } from "../../utils/filter";
 
 function Catalog({openModal, setOpenModal}) {
-  
+ 
+const [currentPage, setCurrentPage] = useState(1)
+function setCurrentPageNo(pageNumber) {
+  setCurrentPage(pageNumber)
+}
+const {loading, products, productsCount, resPerPage} = useSelector(state => state.products)
+console.log(products, productsCount, resPerPage);
 
+const dispatch = useDispatch();
+
+useEffect(() =>{
+  dispatch(getProducts(currentPage))
+},[dispatch, currentPage])
   const [selected1, setSelected1] = useState("Кава в капсулах");
   const [selected2, setSelected2] = useState("Новинки");
   const [selected3, setSelected3] = useState("Новинки");
@@ -24,6 +40,7 @@ function Catalog({openModal, setOpenModal}) {
   const [selected6, setSelected6] = useState("Тип кави");
   const [selected7, setSelected7] = useState("Розмір чашки");
 
+  
   return (
     <div className="container">
       <div>
@@ -75,8 +92,25 @@ function Catalog({openModal, setOpenModal}) {
           selected={selected7}
         />
       </div>
-        <Cards setOpenModal={setOpenModal}/>
+        <Cards setOpenModal={setOpenModal} products={products} loading={loading}/>
         <Modal openModal={openModal} setOpenModal={setOpenModal}/>
+        {resPerPage <= productsCount && (
+                        <div className="pagination">
+                            <Pagination
+                                activePage={currentPage}
+                                itemsCountPerPage={resPerPage}
+                                totalItemsCount={productsCount}
+                                onChange={setCurrentPageNo}
+                                nextPageText={'>'}
+                                prevPageText={'<'}
+                                firstPageText={'<<'}
+                                lastPageText={'>>'}
+                                itemClass="page-item"
+                                linkClass="page-link"
+                            />
+                        </div>
+                    )}
+
     </div>
   );
 }

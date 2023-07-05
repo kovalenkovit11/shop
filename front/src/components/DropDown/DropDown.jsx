@@ -7,7 +7,11 @@ const DropDown = ({ options, selected, setSelected, category, id }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const dropDownRef = useRef(null);
   const dropDownContentRef = useRef(null);
-
+  const selectItem = (option) => {
+    setSelected(option.name);
+    setSelectedOption(option.id);
+    setIsActive(false);
+  };
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (
@@ -27,12 +31,11 @@ const DropDown = ({ options, selected, setSelected, category, id }) => {
       document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, [isActive]);
+  useEffect (() => {
+    selectItem(options[0])
+  },[options])
 
-  const selectItem = (option) => {
-    setSelected(option.name);
-    setSelectedOption(option.id);
-    setIsActive(false);
-  };
+
 
   const openDropDown = () => {
     setIsActive(!isActive);
